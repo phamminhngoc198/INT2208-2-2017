@@ -8,6 +8,7 @@
 ### Ngôn ngữ sử dụng
 - HTML,CSS,Jquery
 - Bootstrap
+- frame:Angular2
 ### Các tính năng:
 - Thi online đề thi đại học, đề thi thử các trường
 - Hệ thống tài liệu, công thức làm nhanh phong phú
