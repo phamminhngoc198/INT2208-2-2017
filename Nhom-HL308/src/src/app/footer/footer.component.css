@@ -1,0 +1,13 @@
+footer {
+      padding: 25px;
+      color: #ffffff;
+    }
+.left {
+    border-right: white solid 1px;
+}
+.footers {
+    background-color: #262626
+}
+.footer {
+    background-color: #292929;
+}

@@ -1,0 +1,15 @@
+<content>
+        <div class="container">
+            <h3 class="text-center">Tài liệu ôn thi môn Vật Lý</h3>
+            <hr>
+            <div class="row">
+                <div class="col-md-3" *ngFor="let tailieu of tailieu">
+                    <a href="{{tailieu.link}}" target="_blank">
+                        <img src="{{tailieu.path}}" alt="" width="100%" height="200">
+                        <p class="text-center">{{tailieu.title}}</p>
+                    </a>
+                    <hr>
+                </div>
+            </div>
+        </div>
+</content>

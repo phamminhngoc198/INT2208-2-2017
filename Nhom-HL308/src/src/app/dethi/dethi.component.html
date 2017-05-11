@@ -1,0 +1,15 @@
+<content>
+        <div class="container">
+            <h3 class="text-center">Đề thi thử Đại học môn Vật Lý</h3>
+            <hr>
+            <div class="row">
+                <div class="col-md-3" *ngFor="let xemdethi of dethi">
+                    <a [routerLink]="['/xemdethi/'+ xemdethi.$key]">
+                        <img src="{{xemdethi.path}}" alt="" width="100%" height="200">
+                        <p class="text-center">{{xemdethi.title}}</p>
+                    </a>
+                    <hr>
+                </div>
+            </div>
+        </div>
+</content>

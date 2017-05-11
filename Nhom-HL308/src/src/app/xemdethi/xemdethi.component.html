@@ -1,0 +1,31 @@
+<content >
+        <div class="container" >
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-center">{{deth.title}}</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item text-center"><h4><b>Đề bài</b></h4></li>
+                        <div *ngFor="let a of quest">
+                            <li class="list-group-item" *ngIf = "a.title == deth.title">
+                                <div class="well well-lg"  >
+                                    <h4><span class=""><label>{{a.cauhoi}}</label></span></h4>
+                                    <hr>
+                                    <span><label><h4>Chọn câu trả lời đúng:</h4></label></span>
+                                    <ul>
+                                        <h5>
+                                            <li class="radio" *ngFor = "let luachon of a.luachon" >
+                                                <label><b>+) </b> {{luachon}} </label>
+                                            </li>
+                                        </h5>
+                                    </ul>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                    <a href="{{deth.link}}" target="_blank">
+                        <button class="btn btn-success col-xs-3 well-sm col-md-offset-4">Tải đề thi</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+</content>
