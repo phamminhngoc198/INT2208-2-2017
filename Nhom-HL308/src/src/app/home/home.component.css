@@ -1,0 +1,1 @@
+.animate-fading{animation:fading 10s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}150%{opacity:0}}

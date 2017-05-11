@@ -1,0 +1,118 @@
+<div class="container" *ngIf = "xacnhan">
+    <content>
+        <div class="container">
+            <h3 class="text-center">Bắt đầu làm bài</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan="3" rowspan="" headers="" scope=""><h5 class="text-center text-success"><span>Xác Nhận Làm Bài Thi</span></h5></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{deth.title}}</td>
+                            <td>Thời gian: 60 phút</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button name="bat_dau" class="btn btn-success col-xs-3 well-sm col-md-offset-4" value="Bắt đầu làm bài" (click) = "xacnhan!=xacnhan; lambai!=lambai; getClick2(); start()">Bắt đầu</button>
+        </div>
+    </content>
+</div>
+<content *ngIf = "lambai">
+        <div class="container" *ngIf="show">
+            <div class="row">
+                <div class="col-md-10">
+                    <h2>{{deth.title}}</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Đề bài</li>
+                <div *ngFor="let question of quest">
+                    <li class="list-group-item" *ngIf = "question.title == deth.title">
+                        <div class="well well-lg" >
+                            <h4><span class=""><label>{{question.cauhoi}}</label></span></h4>
+                            <hr>
+                            <span><label><h4>Chọn câu trả lời đúng:</h4></label></span>
+                            <div class="radio" *ngFor = "let luachon of question.luachon" >
+                                <label><input  #b type="radio" value = "{{luachon}}" name = "{{question.id}}" (click) = "check(name, b.value)">{{luachon}}</label>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+                </div>
+                <div class="col-md-2 ">
+                    <div class="affix clock text-center">
+                        <label><h3>Thời gian làm bài:</h3></label>
+                        <p>
+                            <label class="text-center">
+                                <h4>
+                                    <span id="h">{{h}}</span> :
+                                    <span id="m">{{m}}</span> :
+                                    <span id="s">{{s}}</span>
+                                </h4>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <button *ngIf="show" name="end" class="btn btn-success col-xs-3 well-sm col-md-offset-4" value="Kết thúc làm bài" (click)="showHeroes!=showHeroes; showHeroe != showHeroe; getClick1()">Nộp bài</button>
+        </div>
+        <div class="container" *ngIf="shows" >
+    <content>
+        <div class="container">
+            <h3 class="text-center"> Kết quả bài thi</h3>
+            <div class="table-responsive">
+                <table class="table table-border">
+                    <thead>
+                        <tr>
+                            <th colspan="" rowspan="" headers="" scope=""><p class="text-center">Điểm</p></th>
+                            <th colspan="" rowspan="" headers="" scope=""><p class="text-center">Xem đáp án và lời giải</p></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <h1 class="text-center">{{score/16}}</h1>
+                                <h4 class="text-center">Số đáp án đúng: {{score/4}}/40</h4>
+                            </td>
+                            <td>
+                                <h4 class="text-center">Nếu chưa hài lòng với kết quả, Bạn nên cố gắng tự kiểm tra lại bài làm trước khi xem đáp án hoặc lời giải!</h4>
+                                <button type="button" class="btn btn-primary col-md-4" (click) = "getClick3()">Xem đáp án</button>
+                                <button type="button" class="btn btn-primary col-md-4" (click) = "gotoDethitest()">Làm lại bài thi</button>    
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" class="btn btn-success col-xs-3 well-sm col-md-offset-4"(click) = "gotoDethi()">Kết thúc</button>
+        </div>
+    </content>
+</div>
+</content>
+<div class="container" *ngIf="da">
+    <div class="row">
+        <div class="col-md-10">
+            <h2>{{deth.title}}</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Đề bài</li>
+                <div *ngFor="let a of quest">
+                    <li class="list-group-item" *ngIf = "a.title == deth.title">
+                        <div class="well well-lg" >
+                            <h4><span class=""><label>{{a.cauhoi}}</label></span></h4>
+                            <hr>
+                            <span><label><h4>Chọn câu trả lời đúng:</h4></label></span>
+                            <div class="radio" *ngFor = "let luachon of a.luachon" >
+                                <label><input  #b type="radio" value = "{{luachon}}" name = "{{a.id}}">{{luachon}}</label>
+                            </div>
+                            <label>Đáp án: {{a.answer}}</label>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
