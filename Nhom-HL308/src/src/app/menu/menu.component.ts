@@ -16,20 +16,15 @@ export class MenuComponent implements OnInit {
   error: any;
   show = false;
   shows = true;
+  name: any;
   private use_displayName: String;
   private user_email: String;
   constructor(public firebaseService: FirebaseService, public af: AngularFire,private router: Router) {
-    this.firebaseService.af.auth.subscribe(
-      (auth) => {
-        if(auth == null) {
-          this.use_displayName = '';
-          this.user_email = '';
-        } else{
-          this.use_displayName = auth.google.displayName;
-          this.user_email = auth.google.email;
-        }
+    this.af.auth.subscribe(auth => {
+      if(auth) {
+        this.name = auth;
       }
-    );
+    });
   }
   ngOnInit() {
   }

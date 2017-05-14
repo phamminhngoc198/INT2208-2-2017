@@ -23,7 +23,7 @@
                             </ul>
                         </li>
                         <li class="active" *ngIf="show">
-                            <a><b>{{use_displayName}}({{user_email}})</b></a>
+                            <a><b>{{name.auth.displayName}}</b></a>
                         </li>
                         <li *ngIf="show">
                             <a><button (click)="logout()"><b>Đăng xuất</b></button></a>
@@ -42,11 +42,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img src="../assets/images/home.jpg" width="50" height="50" />
+            <a routerLink="/home" routerLinkActive="active"><img src="../assets/images/home-icon.png" width="50" height="50" /></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Trang chủ</a></li>
+                <li class="active"><a routerLink="/home" routerLinkActive="active">Trang chủ</a></li>
                 <li><a routerLink="/tailieu" routerLinkActive="active">Tài liệu</a></li>
                 <li><a routerLink="/dethi" routerLinkActive="active">Đề thi</a></li>
                 <li><a routerLink="/dethitest" routerLinkActive="active">Luyện thi</a></li>
