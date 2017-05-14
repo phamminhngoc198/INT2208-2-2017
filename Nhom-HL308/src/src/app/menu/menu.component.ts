@@ -38,6 +38,7 @@ export class MenuComponent implements OnInit {
         this.show = true;
       }).catch(
         (err) => {
+          console.log(err);
         this.error = err;
       })
   }
