@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { initializeApp, database } from 'firebase';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
-
 import { Question } from './question';
 
 @Component({

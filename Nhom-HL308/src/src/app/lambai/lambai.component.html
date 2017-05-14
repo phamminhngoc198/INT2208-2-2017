@@ -2,11 +2,11 @@
     <content>
         <div class="container">
             <h3 class="text-center">Bắt đầu làm bài</h3>
-            <div class="table-responsive">
+            <div class="table">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th colspan="3" rowspan="" headers="" scope=""><h5 class="text-center text-success"><span>Xác Nhận Làm Bài Thi</span></h5></th>
+                            <th colspan="3"><h5 class="text-center text-success"><span>Xác Nhận Làm Bài Thi</span></h5></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,7 +35,7 @@
                             <hr>
                             <span><label><h4>Chọn câu trả lời đúng:</h4></label></span>
                             <div class="radio" *ngFor = "let luachon of question.luachon" >
-                                <label><input  #b type="radio" value = "{{luachon}}" name = "{{question.id}}" (click) = "check(name, b.value)">{{luachon}}</label>
+                                <label><input  #b type="radio" value = "{{luachon}}" name = "{{question.id}}" (click) = "check(deth.title, b.value)">{{luachon}}</label>
                             </div>
                         </div>
                     </li>
@@ -63,8 +63,8 @@
     <content>
         <div class="container">
             <h3 class="text-center"> Kết quả bài thi</h3>
-            <div class="table-responsive">
-                <table class="table table-border">
+            <div class="table">
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th colspan="" rowspan="" headers="" scope=""><p class="text-center">Điểm</p></th>
@@ -74,8 +74,8 @@
                     <tbody>
                         <tr>
                             <td>
-                                <h1 class="text-center">{{score/16}}</h1>
-                                <h4 class="text-center">Số đáp án đúng: {{score/4}}/40</h4>
+                                <h1 class="text-center">{{score/4}}</h1>
+                                <h4 class="text-center">Số đáp án đúng: {{score}}/40</h4>
                             </td>
                             <td>
                                 <h4 class="text-center">Nếu chưa hài lòng với kết quả, Bạn nên cố gắng tự kiểm tra lại bài làm trước khi xem đáp án hoặc lời giải!</h4>
@@ -86,7 +86,7 @@
                     </tbody>
                 </table>
             </div>
-            <button type="button" class="btn btn-success col-xs-3 well-sm col-md-offset-4"(click) = "gotoDethi()">Kết thúc</button>
+            <button type="button" class="btn btn-success col-xs-3 well-sm col-md-offset-4"(click) = "gotoDethitest()">Kết thúc</button>
         </div>
     </content>
 </div>

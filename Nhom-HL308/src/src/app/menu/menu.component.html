@@ -11,7 +11,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <img src="../assets/images/home.jpg" width="50" height="50" />
-                    <a href="" color="white">{{title}}</a>
+                    <a routerLink="/home" routerLinkActive="active" color="white">{{title}}</a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-ex-collapse" color = "white">
                     <ul class="nav navbar-nav navbar-right">
@@ -19,11 +19,10 @@
                             <a href="" class="dropdown-toggle" data-toggle="dropdown" >Đăng nhập<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><button (click)="loginGoogle()">Đăng nhập với Google</button></li>
-                                <li><button  (click)="loginFb()">Đăng nhập với Facebook</button></li>
                             </ul>
                         </li>
                         <li class="active" *ngIf="show">
-                            <a><b>{{name.auth.displayName}}</b></a>
+                            <a><b>{{name.auth.displayName}}({{name.auth.email}})</b></a>
                         </li>
                         <li *ngIf="show">
                             <a><button (click)="logout()"><b>Đăng xuất</b></button></a>

@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Params, Router }   from '@angular/router';
 import { Location }                 from '@angular/common';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
-
 import { FirebaseService } from '../services/firebase.service';
 @Component ({
     selector: 'my-lambai',
@@ -57,12 +56,11 @@ export class LambaiComponent implements OnInit {
       this.quest = quest;
     });
   }
-  check(b: string, a: string) {
-      b = a;
+  check(title: string, a: string) {
       let c = [];
         for (let i = 0; i < this.quest.length; i ++){
           c[i] = 0;
-          if(a == this.quest[i].answer){
+          if((this.quest[i].title == title) && (a == this.quest[i].answer)){
             c[i] =1;
             this.score+= c[i];
           }
